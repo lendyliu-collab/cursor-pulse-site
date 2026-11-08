@@ -2,8 +2,8 @@
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>隐私政策 · cursor-pulse</title><link rel="stylesheet" href="style.css"></head><body>
 <header><a href="./">cursor-pulse</a><nav aria-label="主导航"><a href="./">应用介绍</a><a href="terms.html">服务条款</a></nav></header>
 <main class="prose"><div class="eyebrow">Privacy policy</div><h1>隐私政策</h1><p>生效及更新日期：2026-11-08。适用于 cursor-pulse 个人自用项目及本说明网站。</p>
-<h2>1. 当前状态与处理目的</h2><p>当前版本只验证 Google Drive 测试文档的创建和导出回读，不包含真实笔记的自动同步。后续拟在用户授权后，将得到大脑笔记归档到用户自己的 Google Drive，并在 Google Sheets 中保存轻量索引；这两项能力尚未部署。</p>
-<h2>2. 访问的数据与权限</h2><p>当前测试处理固定测试文本，以及测试文件的标识、链接和回读结果。Google OAuth 权限仅为 <code>https://www.googleapis.com/auth/drive.file</code>，允许应用访问其创建的文件及用户通过应用选择或打开的文件，不授予整个 Drive 的访问权限。</p><p>未来笔记归档拟处理用户选定范围内的原文、已有 AI 摘要、标题、标签、来源、笔记标识及更新时间，仅用于归档、去重、更新与检索。新增实际数据处理行为前将相应更新说明。</p>
+<h2>1. 当前状态与处理目的</h2><p>当前版本已在用户授权下验证三条不同来源笔记的手动云端归档：Google Drive 保存 Markdown 全文与完整 API JSON 快照，Google Sheets 保存轻量索引。全量、定时同步和异常通知尚未部署。</p>
+<h2>2. 访问的数据与权限</h2><p>当前手动验证处理用户选定三条笔记的原文、已有 AI 摘要、标题、标签、来源、笔记标识、更新时间、附件链接与其他元数据，仅用于归档、去重、更新与检索，不下载附件二进制。Google OAuth 权限仅为 <code>https://www.googleapis.com/auth/drive.file</code>，允许应用访问其创建的文件及用户通过应用选择或打开的文件，不授予整个 Drive 的访问权限。</p><p>Drive 原始 JSON 保留归档时的完整 API 响应。部分附件链接带临时签名并可能过期，去重时仅规范化已识别的临时签名参数；原文、摘要或真实资源变化仍会触发更新。新增实际数据处理行为前将相应更新说明。</p>
 <h2>3. 存储与服务提供方</h2><p>Google 文件保存在用户自己的 Google 账号中。GitHub Actions 承担云端脚本执行，运行时需使用用户配置的 OAuth 凭据。Repository Secrets 用于保存凭据；Mac 上的本地授权配置保存在用户私有目录，仅当前用户可读写。</p><p>得到大脑提供授权的源数据，Google 提供文件存储及 OAuth 服务，GitHub 提供执行、Secrets 和静态网站托管服务。各服务亦受其自身隐私政策约束。当前运行日志可能包含测试文件链接及运行状态，不用于公开发布笔记正文或凭据。</p>
 <h2>4. 使用与共享限制</h2><p>本项目不出售用户数据，不将其用于广告，不默认逐条调用额外收费的大语言模型，也不使用 Google 用户数据训练通用 AI 或机器学习模型。Google 用户数据的使用和向其他应用传输遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>，包括 Limited Use 要求。</p>
 <h2>5. 保留、删除与撤销授权</h2><p>测试文件及未来归档副本在用户自己的 Drive 中保留，直到用户自行删除。停止脚本或撤销 Google 授权可停止后续访问，但不会自动删除已保存的文件。用户可在 <a href="https://myaccount.google.com/connections">Google 账号的第三方连接设置</a>中撤销授权，并自行删除 Drive 文件、本地配置及 GitHub Repository Secrets。</p>
